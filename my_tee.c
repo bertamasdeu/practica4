@@ -5,11 +5,13 @@
 #include <stdio.h>
 #include <errno.h>
 
+
 int main(int argc,char *argv[]){
 
-if (argc > 2){
+if (argc == 2){
 // crear un arxiu
-fd =  open(argv[1], O_CREAT);
+open(argv[1], O_CREAT,-rw-r--r--);
+fd = open(argv[1],O_RDWR)
 
 //comprovar si existeix
 if (fd == -1){
@@ -18,9 +20,11 @@ if (fd == -1){
 	}
 
 //escriure coses a l'arxiu
-ssize_t read(fd, int buf, size_t count);
+int buf;
+size_t count = 1;
+read(0, buf, count);
 while(read == 1){
-	echo($buf)
+	printf("%c",buf);
 	ssize_t write(fd, buf, count);
 
 	if (write == 0){ 	//esto esta bien?
@@ -28,9 +32,10 @@ while(read == 1){
         	exit (-1);
 		break
 		}
-	ssize_t read(fd, int buf, size_t count);
+	ssize_t read(fd, buf, count);
 	}
 
 }
 
 }
+
