@@ -10,8 +10,7 @@ int main(int argc,char *argv[]){
 
 if (argc == 2){
 // crear un arxiu
-open(argv[1], O_CREAT,-rw-r--r--);
-fd = open(argv[1],O_RDWR)
+fd = open(argv[1],O_RDWR|O_CREAT|O_TRUNC,0644);
 
 //comprovar si existeix
 if (fd == -1){
@@ -20,19 +19,22 @@ if (fd == -1){
 	}
 
 //escriure coses a l'arxiu
-int buf;
+char buf;
 size_t count = 1;
-read(0, buf, count);
-while(read == 1){
+int count1;
+int num;
+count1 = read(0, &buf, count);
+while(count1 == 1){
 	printf("%c",buf);
-	ssize_t write(fd, buf, count);
+	write(1, buf, count)
+	num = write(fd, buf, count);
 
-	if (write == 0){ 	//esto esta bien?
+	if (num == 0){ 	
 		perror("L'arxiu no existeix");
         	exit (-1);
 		break
 		}
-	ssize_t read(fd, buf, count);
+	read(fd, $buf, count);
 	}
 
 }
