@@ -12,9 +12,9 @@ if (argc == 2){
 // crear un arxiu
 fd = open(argv[1],O_RDWR|O_CREAT|O_TRUNC,0644);
 
-//comprovar si existeix
+//comprovar si hi ha algun error
 if (fd == -1){
-	perror("L'arxiu no existeix");
+	perror("S'ha produït un error");
 	exit (-1);
 	}
 
@@ -38,6 +38,6 @@ while(count1 == 1){
 	}
 
 }
-
+close(fd)
 }
 
